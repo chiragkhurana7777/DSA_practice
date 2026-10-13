@@ -11,9 +11,9 @@ class Solution {
         int l=1,high=max;
         while(l<=high){
             int mid = l+ (high-l)/2;
-            int hours=0;
+            long hours=0;
             for(int num:piles){
-                hours+=(num + mid-1)/mid;
+                hours += num / mid + (num % mid == 0 ? 0 : 1);
             }
             if(hours>h){
                 l=mid+1;
@@ -24,8 +24,6 @@ class Solution {
 
         }
         return l;
-
-
 
     }
 }
